@@ -9,7 +9,7 @@ import { auth } from '../utils/firebase';
 
 const Body = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const appRouter = createBrowserRouter([
         {
             path:"/",
@@ -29,7 +29,7 @@ const Body = () => {
                 
                 const {uid, email, displayName}= user;
                 dispatch(addUser({uid: uid, email: email, displayName: displayName}));
-                navigate("/browse")
+                // navigate("/browse")
                 
             } else {
                 dispatch(removeUser());
