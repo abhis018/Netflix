@@ -6,6 +6,7 @@ import { auth } from '../utils/firebase';
 import { updateProfile } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { USER_AVATAR } from '../utils/constant';
 
 const Login = () => {
     const [isSignInForm, setSignInForm] = useState(true);
@@ -32,10 +33,11 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 updateProfile(user, {
-                    displayName: name.current.value
+                    displayName: name.current.value,
+                    photoURL: {USER_AVATAR},
                     }).then(() => {
-                         const {uid, email, displayName}= auth.currentUser;
-                            dispatch(addUser({uid: uid, email: email, displayName: displayName}));
+                         const {uid, email, displayName,photoURL}= auth.currentUser;
+                            dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
                     }).catch((error) => {
                         setErrorMessage(error.message);
                     });
