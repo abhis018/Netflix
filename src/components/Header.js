@@ -35,7 +35,7 @@ const Header = () => {
 
 
   return (
-    <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
+    <div className='absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
         <img className = "w-44" src={LOGO} alt="logo"/>
         {user && <div className='flex p-5'>
           <img 
@@ -43,7 +43,7 @@ const Header = () => {
             alt='userIcon' 
             src='https://occ-0-2483-3646.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229'
           />
-          <button onClick={handleSignOut} className='font-bold text-blue-900'>Sign Out</button>
+          <button onClick={handleSignOut} className='font-bold text-blue-900 z-10'>Sign Out</button>
         </div>}
     </div>
   )
