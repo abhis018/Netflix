@@ -1,3 +1,4 @@
+import GptSearch from './GptSearch';
 import Header from './Header';
 import useNowPlayingMovies from './hooks.js/useNowPlayingMovies';
 import usePopularMovies from './hooks.js/usePopularMovies';
@@ -16,6 +17,7 @@ const Browse = () => {
   return (
     <div className='bg-[#141414] text-white p-4'>
       <Header/>
+      <GptSearch/>
       <MainContainer/>
       <SecondaryContainer/>
     </div>
