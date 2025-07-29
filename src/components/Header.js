@@ -38,8 +38,9 @@ const Header = () => {
     <div className='absolute top-0 left-0 w-full px-8 py-2 bg-gradient-to-b from-black z-[60] flex justify-between items-center overflow-hidden'>
         <img className = "w-28" src={LOGO} alt="logo"/>
         {user && <div className='flex p-5'>
+          <button className='px-2 bg-purple-800 rounded-lg mx-2'>GPT Search</button>
           <img 
-            className='w-8 h-8'
+            className='w-8 h-8 rounded-lg'
             alt='userIcon' 
             src='https://occ-0-2483-3646.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229'
           />
