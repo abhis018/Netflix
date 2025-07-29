@@ -33,12 +33,20 @@ const Header = () => {
 
     },[]);
 
+    const handleGptSearchClick = () => {
+      
+    }
+
+
 
   return (
     <div className='absolute top-0 left-0 w-full px-8 py-2 bg-gradient-to-b from-black z-[60] flex justify-between items-center overflow-hidden'>
         <img className = "w-28" src={LOGO} alt="logo"/>
         {user && <div className='flex p-5'>
-          <button className='px-2 bg-purple-800 rounded-lg mx-2'>GPT Search</button>
+          <button className='px-2 bg-purple-800 rounded-lg mx-2' 
+            onClick={handleGptSearchClick}>
+            GPT Search
+          </button>
           <img 
             className='w-8 h-8 rounded-lg'
             alt='userIcon' 
