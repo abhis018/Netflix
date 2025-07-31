@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Header from './Header';
 import { checkValidData } from '../utils/Validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
@@ -7,6 +7,8 @@ import { updateProfile } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { USER_AVATAR } from '../utils/constant';
+import { BACK_URL } from '../utils/constant';
+
 
 const Login = () => {
     const [isSignInForm, setSignInForm] = useState(true);
@@ -64,7 +66,7 @@ const Login = () => {
     <div>
         <Header/>
         <div className="hidden sm:block">
-            <img className="absolute w-full h-full object-cover" src='https://assets.nflxext.com/ffe/siteui/vlv3/05e91faa-6f6d-4325-934e-5418dcc2567b/web/IN-en-20250630-TRIFECTA-perspective_159086b1-425f-435b-bcd5-1ed8039cdef9_large.jpg' alt='background'/>
+            <img className="absolute w-full h-full object-cover" src={BACK_URL} alt='background'/>
         </div>
         <form onSubmit={(e) => e.preventDefault()} className='absolute inset-0 mx-auto my-20 p-6 sm:p-10 md:p-12 w-11/12 sm:w-8/12 md:w-6/12 lg:w-4/12 xl:w-3/12 max-w-[500px] bg-black text-white rounded-lg bg-opacity-80'>
             <h1 className='font-bold text-2xl sm:text-3xl py-4'>
