@@ -19,5 +19,3 @@ export const SUPPORTED_LANGUAGES = [{identifier: "en", name: "English"},{identif
 
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";
-
-export const OPENAI_KEY = "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";
