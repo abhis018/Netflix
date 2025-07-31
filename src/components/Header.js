@@ -6,11 +6,14 @@ import { addUser, removeUser } from '../utils/userSlice';
 import { useEffect } from 'react';
 import { LOGO } from '../utils/constant';
 import { toggleGptSearchView } from '../utils/gptSlice';
+import { SUPPORTED_LANGUAGES } from '../utils/constant'
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch)
   const handleSignOut = () => {
     signOut(auth).then(() => {})
     .catch((error) => {
@@ -38,15 +41,25 @@ const Header = () => {
       dispatch(toggleGptSearchView())
     }
 
-
+    const handleLanguageChange = (e) => {
+      dispatch(changeLanguage(e.target.value));
+    }
 
   return (
     <div className='absolute top-0 left-0 w-full px-8 py-2 bg-gradient-to-b from-black z-[60] flex justify-between items-center overflow-hidden'>
         <img className = "w-28" src={LOGO} alt="logo"/>
-        {user && <div className='flex p-5'>
+        {user && <div className='flex'>
+            {showGptSearch && (
+              <div>
+                <span className="text-xl">🌐</span>
+                <select className="rounded-lg bg-gray-900" onChange={handleLanguageChange}>
+                  {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+                </select>
+              </div>
+            )}
           <button className='px-2 bg-purple-800 rounded-lg mx-2' 
             onClick={handleGptSearchClick}>
-            GPT Search
+            {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
           <img 
             className='w-8 h-8 rounded-lg'
