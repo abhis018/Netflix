@@ -18,7 +18,7 @@ const VideoTitle = ({title, overview, movieId}) => {
           </p>
         </div>
       )}
-      <div className="flex gap-3">
+      <div className="flex gap-3 justify-center md:justify-normal">
         <button className="flex items-center gap-2 px-4 py-1.5 bg-white text-black font-medium text-sm rounded hover:bg-gray-200 transition duration-200">
           <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
